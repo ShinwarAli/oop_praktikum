@@ -1,10 +1,10 @@
-package business;
+package business.Buergeraemter;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.LinkedList;
-import fabrikMethode.ConcreteCreatorCsv;
 import fabrikMethode.ConcreteCreatorTxt;
+import fabrikMethode.ConcreteCsvCreator;
 import fabrikMethode.Creator;
 import fabrikMethode.Product;
 import ownUtil.MyObservable;
@@ -51,7 +51,7 @@ public class BuergeraemterModel implements MyObservable{
  		
 	public void schreibeBuergeraemterInCsvDatei()
 	    throws IOException{
-		Creator creator =new ConcreteCreatorCsv();
+		Creator creator =new ConcreteCsvCreator();
 		Product writer = creator.factoryMethod();
 		for (Buergeramt buergeramt : buergeraemterList) {
 	        writer.fuegeInDateiHinzu(buergeramt);
